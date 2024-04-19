@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{>header}}
+<body>
+    {{>navbar}}
+    <main>
+    <br>
+   <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="embed-responsive embed-responsive-16by9" id="video-container">
+          <video class="embed-responsive-item" id="video" loop muted>
+            <source src="https://scottishpantrynetwork.org.uk/wp-content/uploads/2023/10/Website-1-1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div id="text-overlay">
+            Welcome To Scottish Pantry Network Website
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional, if needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("video-container").addEventListener("mouseenter", function() {
+      var video = document.getElementById("video");
+      video.play();
+    });
+
+    document.getElementById("video-container").addEventListener("mouseleave", function() {
+      var video = document.getElementById("video");
+      video.pause();
+    });
+  </script>
+  <br>
+
+  <article class="NewsBox">
+                <div class="Big_Text_Header_NewsBox">
+                     <h4 class="sub_header">NO.2 Title: Help the scottish pantry network by making a Donatation</h4> </div>
+                <img src="/img/Donation_Box.png" class="NewsImage">
+                <div class="brief">
+                    <h4 class="sub_header">brief</h4>
+                    <p class="text_NewsBox">Your gift will support people in the community experiencing food insecurity.
+                    We bring together surplus food and a host of committed volunteers to provide healthy and nutritious meals
+                    for the people and communities who need them the most.Your help can ensure we keep our services running 
+                    as the current wave of uncertainty caused by the cost of living crisis. 
+                    Please consider donating to us. 
+                    Thank you</p>
+                </div>
+
+                <div class="About_Author">
+                    <h4 class="sub_header">Click Here to make Donatation - must be login</h4>
+                    
+                    <div class="text-right" style="margin-bottom: 1em;">
+                    {{^user}}
+                    <a id="login" href="/login" class="btn btn-primary">
+                    Sign in
+                    </a>
+                    <a id="login" href="/register" class="btn btn-primary">
+                    Register
+                    </a>
+                   {{/user}}
+                   {{#user}}
+                   <div class="text-right">
+                   <a href="/new" class="btn btn-primary">
+                   Make a Donatation
+                   </a>
+                   </div>
+                   {{/user}}
+                </div>
+               </article>
+</div>
+
+</main>
+    
+    <footer>
+    <div class="container-fluid bg-info text-center">
+        <p class="" > 2024 Scottish Charitable Incorporated Organisation. All rights reserved.</p>
+    </div>
+    </footer>
+</body>
+</html>

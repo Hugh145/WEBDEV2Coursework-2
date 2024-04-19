@@ -1,0 +1,45 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body class="container">
+<div class="text-right" style="margin-bottom: 1em;">
+{{^user}}
+  <a id="login" href="/register" class="btn btn-primary">
+    Register
+  </a>
+  <a id="login" href="/login" class="btn btn-primary">
+    Sign in
+  </a>
+{{/user}}
+{{#user}}
+    <a id="View posts" href="/loggedIn" class="btn btn-primary">
+   View posts
+  </a>
+<a href="/new" class="btn btn-primary">
+Write in the guestbook
+</a>
+  <a id="addUser" href="/adminPostNewUser" class="btn btn-primary">
+    Add user
+  </a>
+    <a id="logout" href="/logout" class="btn btn-primary">
+        Sign out
+</a>
+{{/user}}
+</div>
+<h1>{{title}}</h1>
+<div>
+{{#users}}
+  <div class="card">
+    <div class="card-body">
+          <h4 class="card-title">User name : {{user}}</h4>
+          <p class="card-text">
+              Role : {{role}}
+          </p>
+    </div>
+  </div>
+ {{/users}}
+  </div>
+</div>
+</body>
+</html>

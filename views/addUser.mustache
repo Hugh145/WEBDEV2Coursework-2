@@ -1,0 +1,60 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body class="container">
+<div class="text-right" style="margin-bottom: 1em;">
+{{^user}}
+  <a id="login" href="/register" class="btn btn-primary">
+    Register
+  </a>
+  <a id="login" href="/login" class="btn btn-primary">
+    Sign in
+  </a>
+{{/user}}
+{{#user}}
+    <a id="View posts" href="/loggedIn" class="btn btn-primary">
+   View posts
+  </a>
+<a href="/new" class="btn btn-primary">
+Write in the guestbook
+</a>
+
+  <a id="logout" href="/logout" class="btn btn-primary">
+    Sign out
+  </a>
+{{/user}}
+</div>
+<h1>{{title}}</h1>
+<div>
+<h2>Add users</h2>
+<div class="card">
+    <div class="card-body">
+          <h4 class="card-title">Add new user</h4>
+   <form method="post" action="/adminPostNewUser">
+    <div class="form-group">
+        {{user-name-error}}
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required>
+    </div>
+   <div class="form-group">
+        <label for="role">Role</label>
+        <select class="form-control" name="role" id="role" required>
+            <option value="normalUser">User</option>
+            <option value="admin">Admin</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="password">Password (8 characters minimum)</label>
+        <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter password" minlength="8" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-primary">
+    </div>
+</form>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
