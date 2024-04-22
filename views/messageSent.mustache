@@ -1,0 +1,18 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Welcome, {{ user }}!</p>
+    <!-- Your page content goes here -->
+
+    <!-- JavaScript for pop-up message -->
+    <script>
+        // Display a pop-up message when the page loads
+        window.onload = function() {
+            alert("Your message has been sent successfully!"); // You can customize this message
+        };
+    </script>
+</body>
+</html>

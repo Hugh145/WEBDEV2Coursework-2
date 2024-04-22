@@ -1,0 +1,115 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body>
+{{>navbar}}
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="embed-responsive embed-responsive-16by9" id="video-container">
+          <video class="embed-responsive-item" id="video" loop muted>
+            <source src="https://scottishpantrynetwork.org.uk/wp-content/uploads/2023/11/About-page-1-1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div id="text-overlay2">
+            About Us
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("video-container").addEventListener("mouseenter", function() {
+      var video = document.getElementById("video");
+      video.play();
+    });
+
+    document.getElementById("video-container").addEventListener("mouseleave", function() {
+      var video = document.getElementById("video");
+      video.pause();
+    });
+  </script>
+  </div>
+
+<div class="container">
+  <article class="NewsBox">
+                <div class="Big_Text_Header_NewsBox">
+                <h1 class="mt-5 mb-4">About the scottish pantry network</h1> 
+                </div>
+                <img src="/img/aboutpage.png" class="NewsImage">
+                <div class="brief">
+                <h4 class="sub_header">About Information</h4>
+                <p class="card-text">
+                <div class="card mb-3">
+            <div class="card-body">
+                <p class="card-text">
+                Our vison is to create a sustainable network of pantries providing low-cost food and wrap around services. 
+                The pantry is a dignified approach empowering communities to help themselves. 
+                The Pantry will support upskilling the community through volunteering and employability opportunities, 
+                with the shop itself being utilised as a training facility.</p>
+            </div>
+            </div>
+
+            <div class="card mb-3">
+            <div class="card-body">
+                <p class="card-text">
+                The Scottish Pantry Network will support the pantries by being the collective voice for change,
+                we forge strong partnerships to support the development of the hub model, creating a tailored
+                experience for local communities.  The Network will provide ongoing support to the pantries through 
+                compliance, lobbying and creating links with food suppliers.
+                </p>
+            </div>
+            </div>
+                
+                <h2>Organization Goals</h2>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">1. Prevention of Poverty and Relief of Financial Hardship</h2>
+                <p class="card-text">The prevention of poverty and the relief of financial hardship by providing food security to those who need it most and being disadvantaged due to unemployment, low income, lone parent, health, and social standing.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">2. Advancement of Community Development</h2>
+                <p class="card-text">The advancement of community development by acting on behalf of the Network of Pantries, sourcing food to ensure there is enough in the supply chain, lobbying government, providing a regulatory function, and sharing best practice across the Network.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">3. Advancement of Environmental Protection</h2>
+                <p class="card-text">Advancement of environmental protection by reducing food waste locally and nationally.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">4. Advancement of Education</h2>
+                <p class="card-text">Advancement of education by increasing access to skills, training, and employment prospects in relation to developing and running a local pantry.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">5. Advancement of Health</h2>
+                <p class="card-text">Advancement of health by improving health outcomes – particularly around the consumption of fresh fruit and vegetables, through social eating, improving emotional wellbeing and social inclusion through Pantries acting as community hubs, and by promoting access to nutritious meals and increasing fruit and vegetable consumption.</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">6. Relief for Those in Need</h2>
+                <p class="card-text">Relief for those in need by providing access to key support such as money advice, credit unions, housing, health, employment, and skills.</p>
+            </div>
+        </div>
+    </div>
+            </div>
+            </article>
+            </div>
+</body>
+</html>

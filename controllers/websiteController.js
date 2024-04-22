@@ -1,6 +1,6 @@
 const guestbookDAO = require("../models/guestbookModel");
 const userDao = require("../models/userModel.js");   
-
+const contactMessagesDAO = require("../models/contactMessages.js");
 const db = new guestbookDAO({ filename: "guestbook.db", autoload: true }); // to set database up in virtual memory use const db = new guestbookDAO();
 db.init();
 
@@ -22,11 +22,40 @@ exports.landing_page = function (req, res)
   });
 };
 
+exports.about_page = function (req, res) 
+{
+  res.render("about",{
+    title:"about us page"
+  });
+};
+
 exports.show_new_entries = function (req, res) {
   res.render("newEntry", {
     title: "Guest Book",
     user: "user",
   });
+};
+
+//creating the link for the contact form
+exports.getContactform = function (req, res) {
+  res.render("contact_form", {
+    title: "contact form",
+    user: "user",
+  });
+};
+
+//creation of the message 
+// Controller method for handling the POST request of the contact message
+exports.postContactMessage = function (req, res) {
+  // Validate form data
+  if (!req.body.email || !req.body.name || !req.body.subjectMatter || !req.body.message) {
+    // If any required field is missing, send a response indicating the error
+    res.status(400).send("All fields are required.");
+    return;
+  }
+  // Save the contact message to the database
+  contactMessagesDAO.addContactMessage(req.body.email, req.body.name, req.body.subjectMatter, req.body.message );
+  res.redirect("/contact_form");
 };
 
 exports.post_new_entry = function (req, res) {
@@ -60,11 +89,13 @@ exports.show_register_page = function (req, res) {
 
 exports.post_new_user = function (req, res) {
   const user = req.body.username;
+  const typeOfUser = req.body.typeOfUser;
+  const name = req.body.name
+  const EmailAddress = req.body.EmailAddress;
   const password = req.body.pass;
-  const role = req.body.role;
 
-  if (!user || !password) {
-    res.send(401, "no user or no password");
+  if (!user|| !typeOfUser || !name || !EmailAddress || !password) {
+    res.send(401, "please enter in all of the fields");
     return;
   }
   userDao.lookup(user, function (err, u) {
@@ -72,7 +103,7 @@ exports.post_new_user = function (req, res) {
       res.send(401, "User exists:", user);
       return;
     }
-    userDao.create(user, password,role);
+    userDao.createUser(user,typeOfUser, name,EmailAddress, password);
     res.redirect("/login");
   });
 };

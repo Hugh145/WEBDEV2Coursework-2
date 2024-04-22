@@ -20,6 +20,12 @@ class UserDAO {
       password:"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve",
       role:"admin"
       });
+
+      this.db.insert({
+        user:"StaffHugh",
+        password:"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy",
+        role:"Staff"
+        });
     // this.db.insert({
     //     user: 'Peter',
     //     password:
@@ -48,6 +54,26 @@ class UserDAO {
       });
     });
   }
+
+  createUser(username, typeOfUser,name, EmailAddress,password,) {
+    const that = this;
+    bcrypt.hash(password, saltRounds).then(function (hash) {
+      var userEntry = {
+        user: username,
+        typeOfUser:typeOfUser,
+        name:name,
+        EmailAddress:EmailAddress,
+        password: hash,
+        role: "normalUser",
+      };
+      that.db.insert(userEntry, function (err) {
+        if (err) {
+          console.log("Can't insert user: ", username);
+        }
+      });
+    });
+  }
+
   lookup(user, cb) {
     this.db.find({ user: user }, function (err, entries) {
       if (err) {

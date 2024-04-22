@@ -32,9 +32,15 @@ exports.login = function (req, res, next) {
             user: "user",
           });
         }
+        if (payload.role == "Staff") {
+          return res.render("admin", {
+            title: "Admin dashboard",
+            user: "user",
+          });
+        }
         if (payload.role == "normalUser") {
-          return res.render("newEntry", {
-            title: "Guest Book",
+          return res.render("Homepage", {
+            title: "Homepage",
             user: "user",
           });
         }
@@ -49,6 +55,21 @@ exports.login = function (req, res, next) {
 exports.verify = function (req, res, next) {
   let accessToken = req.cookies.jwt;
   if (!accessToken) {
+    return res.status(403).send();
+  }
+  try {
+    next();
+  } catch (e) {
+    //if an error occured return request unauthorized error
+    res.status(401).send();
+  }
+};
+
+exports.verifyStaff = function (req, res, next) {
+  let accessToken = req.cookies.jwt;
+  let payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+
+  if (payload.role != "Staff") {
     return res.status(403).send();
   }
   try {
