@@ -15,10 +15,15 @@ router.post('/contact_form',controller.postContactMessage);
 //about page 
 router.get( '/about', controller.about_page);
 
+
+//add new food item
+router.get('/Add_Food_Item',auth.verify,controller.show_new_Add_Food_Item);
+router.post("/Add_Food_Item", auth.verify, controller.addFoodItem);
+
 //new item
-router.get('/new',auth.verify,controller.show_new_entries);
-router.post('/new', auth.verify, controller.post_new_entry);
-router.get('/posts/:author', controller.show_user_entries);
+// router.get('/new',auth.verify,controller.show_new_entries);
+// router.post('/new', auth.verify, controller.post_new_entry);
+// router.get('/posts/:author', controller.show_user_entries);
 
 //register page
 router.get('/register', controller.show_register_page);

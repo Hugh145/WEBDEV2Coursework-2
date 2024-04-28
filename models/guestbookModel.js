@@ -9,23 +9,23 @@ class GuestBook {
   }
   //a function to seed the database
   init() {
-    // this.db.insert({
-    //   subject: "I liked the exhibition",
-    //   contents: "nice",
-    //   published: "2020-02-16",
-    //   author: "Peter",
-    // });
-    // //for later debugging
-    // console.log("db entry Peter inserted");
+    this.db.insert({
+      subject: "I liked the exhibition",
+      contents: "nice",
+      published: "2020-02-16",
+      author: "Peter",
+    });
+    //for later debugging
+    console.log("db entry Peter inserted");
 
-    // this.db.insert({
-    //   subject: "Didn't like it",
-    //   contents: "A really terrible style!",
-    //   published: "2020-02-18",
-    //   author: "Ann",
-    // });
-    // //for later debugging
-    // console.log("db entry Ann inserted");
+    this.db.insert({
+      subject: "Didn't like it",
+      contents: "A really terrible style!",
+      published: "2020-02-18",
+      author: "Ann",
+    });
+    //for later debugging
+    console.log("db entry Ann inserted");
   }
   //a function to return all entries from the database
   getAllEntries() {

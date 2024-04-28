@@ -1,67 +1,63 @@
-const Datastore = require("nedb");
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
-
-class FoodItemDAO {
+const nedb = require("nedb");
+class foodItemModel {
   constructor(dbFilePath) {
     if (dbFilePath) {
-      // Embedded database
-      this.db = new Datastore({ filename: dbFilePath, autoload: true });
+      this.db = new nedb({ filename: dbFilePath.filename, autoload: true });
     } else {
-      // In-memory database
-      this.db = new Datastore();
+      this.db = new nedb();
     }
   }
-
-  // Initialize the food item database
+  //a function to seed the database
   init() {
-    // Create indexes for faster querying (optional but recommended)
-    this.db.ensureIndex({ fieldName: 'type' });
-    this.db.ensureIndex({ fieldName: 'expiryDate' });
-
-    // Insert some sample data (optional)
     this.db.insert({
-      type: 'Fruit',
-      expiryDate: new Date('2024-04-30'),
-      quantity: 10,
-      picture: 'fruit.jpg',
-      createdBy: 'AdminHugh' // Example user
-    });
-  }
-
-  // Create a new food item
-  createFoodItem(type, expiryDate, quantity, picture, createdBy) {
-    const foodItem = {
-      type: type,
-      expiryDate: new Date(expiryDate),
-      quantity: quantity,
-      picture: picture,
-      createdBy: createdBy
-    };
-    
-    return new Promise((resolve, reject) => {
-      this.db.insert(foodItem, (err, newFoodItem) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(newFoodItem);
-        }
+      category: 'Fruit',
+      nameFood:"Apple",
+      quantity: 5,
+      expiryDate: new Date('2024-05-15'),
+      published: "2024-02-16"
       });
-    });
-  }
 
-  // Get all food items
+  }
+  //a function to return all entries from the database
   getAllFoodItems() {
+    //return a Promise object, which can be resolved or rejected
     return new Promise((resolve, reject) => {
-      this.db.find({}, (err, foodItems) => {
+      //use the find() function of the database to get the data,
+      //error first callback function, err for error, entries for data
+      this.db.find({}, function (err, FoodItems) {
+        //if error occurs reject Promise
         if (err) {
           reject(err);
+          //if no error resolve the promise & return the data
         } else {
-          resolve(foodItems);
+          resolve(FoodItems);
+          //to see what the returned data looks like
+          console.log("function gatAllEntries() returns: ", FoodItems);
         }
       });
+    });
+  }
+  
+  addFoodItems(category, nameFood, expiryDate, quantity,) {
+    var foodItem = {
+        category: category,
+        nameFood: nameFood,
+        expiryDate: new Date(expiryDate),
+        quantity: quantity, 
+        published: new Date().toISOString().split("T")[0]
+    };
+
+    console.log("Food item created", foodItem);
+
+    this.db.insert(foodItem, function (err, doc) {
+        if (err) {
+            console.log("Error inserting food item", err);
+        } else {
+            console.log("Food item inserted into the database", doc);
+        }
     });
   }
 }
-
+const FoodItemDAO = new foodItemModel({ filename: "foodItemModel.db", autoload: true });
+FoodItemDAO.init();
 module.exports = FoodItemDAO;

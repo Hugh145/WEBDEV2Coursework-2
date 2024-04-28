@@ -1,20 +1,23 @@
 const guestbookDAO = require("../models/guestbookModel");
 const userDao = require("../models/userModel.js");   
+const FoodItemDAO = require("../models/foodItemModel.js");  
 const contactMessagesDAO = require("../models/contactMessages.js");
 const db = new guestbookDAO({ filename: "guestbook.db", autoload: true }); // to set database up in virtual memory use const db = new guestbookDAO();
 db.init();
 
+//user login
 exports.show_login = function (req, res) {
   res.render("user/login");
 };
 
 exports.handle_login = function (req, res) {
   res.render("Homepage", {
-    title: "Guest Book",
-    user: "user"
+    title: "Homepage-Login",
+    user: "user" 
   });
 };
 
+//homepage of the website
 exports.landing_page = function (req, res) 
 {
   res.render("Homepage",{
@@ -22,6 +25,7 @@ exports.landing_page = function (req, res)
   });
 };
 
+//the about page 
 exports.about_page = function (req, res) 
 {
   res.render("about",{
@@ -29,12 +33,33 @@ exports.about_page = function (req, res)
   });
 };
 
-exports.show_new_entries = function (req, res) {
-  res.render("newEntry", {
-    title: "Guest Book",
+//Add-Food-Item page 
+exports.show_new_Add_Food_Item = function (req, res) {
+  res.render("Add_Food_Item", {
+    title: "Add Food Item",
     user: "user",
   });
 };
+
+exports.addFoodItem = async function (req, res) {
+  try {
+    if (!req.body.category || !req.body.nameFood || !req.body.quantity) {
+      res.status(400).send("All fields are required.");
+      return;
+    }
+    await FoodItemDAO.addFoodItems(
+      req.body.category,
+      req.body.nameFood,
+      req.body.expiryDate,
+      req.body.quantity
+    );
+    res.redirect("/Add_Food_Item");
+  } catch (error) {
+    console.error("Error adding food item:", error);
+    res.status(500).send("Error adding food item");
+  }
+};
+
 
 //creating the link for the contact form
 exports.getContactform = function (req, res) {
@@ -43,7 +68,6 @@ exports.getContactform = function (req, res) {
     user: "user",
   });
 };
-
 //creation of the message 
 // Controller method for handling the POST request of the contact message
 exports.postContactMessage = function (req, res) {
@@ -133,9 +157,11 @@ exports.show_admin = function (req, res) {
     console.log("promise rejected", err);
   });
 };
+
 exports.admin_add_new_user=function(req, res){
   res.render('addUser',{ user:"admin"})
 }
+
 exports.admin_post_new_user = function (req, res) {
   const user = req.body.username;
   const password = req.body.pass;

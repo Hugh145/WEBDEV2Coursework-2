@@ -1,0 +1,40 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body>
+{{>navbar}}
+<div class="container mt-5">
+    <h1 class="mb-4">Add Food Item</h1>
+    <form action="/Add_Food_Item" method="POST">
+        <div class="mb-3">
+            <label for="category" class="form-label">Type of Food</label>
+            <select class="form-select" id="category" name="category" required>
+                <option value="" selected disabled>Select the type of food</option>
+                <option value="Vegetable">Vegetables</option>
+                <option value="Fruit">Fruits</option>
+                <option value="Grain">Grains</option>
+                <option value="Protein Food">Protein Foods</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Oils & Solid Fats">Oils & Solid Fats</option>
+                <option value="Added Sugars">Added Sugars</option>
+                <option value="Beverages">Beverages</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="nameFood" class="form-label">Name of Food Item</label>
+            <input type="text" class="form-control" id="nameFood" name="nameFood" required>
+        </div>
+        <div class="mb-3">
+            <label for="expiryDate" class="form-label">Expiry Date</label>
+            <input type="date" class="form-control" id="expiryDate" name="expiryDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Total Number of Food Items</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Food Item</button>
+    </form>
+</div>
+    </body>
+</html>
