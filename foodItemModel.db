@@ -1,6 +1,9 @@
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"0Rl58LnnSTswudou"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"QsszErj128TH91eI"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"T0nDyoqEDRaOe072"}
-{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"oOH6I7Il2TBVuaqK"}
-{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"mYzEHQ79CpRmngur"}
 {"category":"Fruit","nameFood":"kiggles","expiryDate":{"$$date":1714435200000},"quantity":"2","published":"2024-04-28","_id":"ULM3gHPS3Ukvnu4k"}
+{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"mYzEHQ79CpRmngur"}
+{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":{"$$date":1715731200000},"published":"2024-02-16","_id":"oOH6I7Il2TBVuaqK"}
+{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-05-15","published":"2024-02-16","_id":"xJsgkodozHxHAZhu"}
+{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","_id":"sTRfAy5wR6LxhDMj"}
+{"category":"Dairy","nameFood":"milk","expiryDate":"2024-05-27","quantity":"09","published":"2024-04-28","_id":"QOW2MKrh0YVN5WRu"}

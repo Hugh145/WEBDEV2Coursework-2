@@ -13,7 +13,7 @@ class foodItemModel {
       category: 'Fruit',
       nameFood:"Apple",
       quantity: 5,
-      expiryDate: new Date('2024-05-15'),
+      expiryDate: new Date('2024-02-27').toISOString().split("T")[0],
       published: "2024-02-16"
       });
 
@@ -42,7 +42,7 @@ class foodItemModel {
     var foodItem = {
         category: category,
         nameFood: nameFood,
-        expiryDate: new Date(expiryDate),
+        expiryDate: new Date(expiryDate).toISOString().split("T")[0],
         quantity: quantity, 
         published: new Date().toISOString().split("T")[0]
     };
