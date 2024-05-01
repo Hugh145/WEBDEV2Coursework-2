@@ -1,0 +1,43 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">All Food Items</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Category</th>
+          <th scope="col">Name</th>
+          <th scope="col">Expiry Date</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">published</th>
+          <th scope="col">createBy</th>
+          <th scope="col">Picture</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#foodItems}}
+        <tr>
+          <td>{{_id}}</td>
+          <td>{{category}}</td>
+          <td>{{nameFood}}</td>
+          <td>{{expiryDate}}</td>
+          <td>{{quantity}}</td>
+          <td>{{published}}</td>
+          <td>{{createBy}}</td>
+          <td><img src="{{picture}}" alt="{{nameFood}}" class="img-fluid"></td>
+        </tr>
+        {{/foodItems}}
+      </tbody>
+    </table>
+   {{#user}}
+   <a id="BackStaffBtn" href="/staff" class="btn btn-primary">
+   Back staff page
+  </a>
+  {{/user}}
+  </div>
+</body>
+</html>

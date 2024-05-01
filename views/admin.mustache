@@ -2,44 +2,85 @@
 <head>
     {{>header}}
 </head>
-<body class="container">
+<body>
+<main>
 <h1>{{title}}</h1>
-<div class="text-right" style="margin-bottom: 1em;">
-{{^user}}
-  <a id="login" href="/register" class="btn btn-primary">
-    Register
-  </a>
-  <a id="login" href="/login" class="btn btn-primary">
-    Sign in
-  </a>
-{{/user}}
-{{#user}}
-    <a id="View posts" href="/loggedIn" class="btn btn-primary">
-   View posts
-  </a>
-<a href="/new" class="btn btn-primary">
-Write in the guestbook
-</a>
-  <a id="addUser" href="/adminPostNewUser" class="btn btn-primary">
-    Add user
-  </a>
-    <a id="logout" href="/logout" class="btn btn-primary">
-        Sign out
-</a>
-{{/user}}
-</div>
-<div>
-{{#users}}
-  <div class="card">
-    <div class="card-body">
-          <h4 class="card-title">User name : {{user}}</h4>
-          <p class="card-text">
-              Role : {{role}}
-          </p>
+    <div class="container text-center"> <!-- Center aligning the buttons -->
+        {{#user}}
+        <h1>FOOD ITEMS</h1>
+        <br>
+            <div class="row mb-4">
+                <div class="col">
+                    <a id="View food items" href="/foodItems" class="btn btn-primary">
+                        View all food items
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/Add_Food_Item_Admin" class="btn btn-primary">
+                        Create a new food item
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/deleteFoodItem" class="btn btn-primary">
+                        Delete Food Item 
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/updateFoodItem" class="btn btn-primary">
+                      update Food Item
+                    </a>
+                </div>
+            </div>
+        {{/user}}
     </div>
-  </div>
- {{/users}}
-  </div>
-</div>
+    {{! this section is for the users of the website }}
+    <div class="container text-center"> <!-- Center aligning the buttons -->
+        {{#user}}
+        <h1>USER ACCOUNT</h1>
+        <br>
+            <div class="row mb-5">
+                <div class="col">
+                    <a id="CreateNewUserAccount" href="/createUserAccountAdmin" class="btn btn-primary">
+                        create New User as Admin
+                    </a>
+                </div>
+                <div class="col">
+                    <a id="add staff and admin" href="/adminPostNewUser" class="btn btn-primary">
+                        Add admin & staff
+                    </a>
+                </div>
+                <div class="col">
+                    <a id="viewAllUserAccounts" href="/viewAllUserAccounts" class="btn btn-primary">
+                        view All User Accounts
+                    </a>
+                </div>
+                <div class="col">
+                    <a id="deleteUserAccountAdmin" href="/deleteUserAccountAdmin" class="btn btn-primary">
+                        delete User Accounts
+                    </a>
+                </div>
+            </div>
+        {{/user}}
+    </div>
+
+    <div class="container text-center"> <!-- /viewAllContactMessages -->
+        {{#user}}
+        <h1>Contact Messages</h1>
+        <br>
+            <div class="row mb-5">
+                <div class="col">
+                    <a id="sendEmail" href="/sendEmail" class="btn btn-primary">
+                        sendEmail
+                    </a>
+                </div>
+                <div class="col">
+                    <a id="viewAllContactMessages" href="/viewAllContactMessages" class="btn btn-primary">
+                        view All Contact Messages
+                    </a>
+                </div>
+            </div>
+        {{/user}}
+    </div>
+</main>
 </body>
 </html>

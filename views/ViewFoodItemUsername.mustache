@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{>header}}
+<body>
+    {{>navbar}}        
+        <div class="container px-lg-5">
+            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <div class="m-4 m-lg-5">
+                    <h1 class="display-5 fw-bold"> View Food Items</h1>
+                    <p class="fs-4">Use this interface view your items.</p>
+                    <form action="/ViewFoodItemUsername" method="POST">
+                        <fieldset>
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input class="form-control" type="text" id="name" name="name" value={{username}} required placeholder="please enter your username">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-primary" type="reset">Reset</button>
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

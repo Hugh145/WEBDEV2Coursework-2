@@ -1,0 +1,31 @@
+<html>
+<head>
+{{>header}}
+</head>
+<body>
+{{#user}}
+<div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+                <h1 class="display-5 fw-bold">Delete Food Item</h1>
+                <form action="/deleteFoodItem" method="POST">
+                    <fieldset>
+                        <div class="mb-3">
+                            <label for="id" class="form-label">Enter the food item ID</label>
+                            <input type="text" class="form-control" id="id" name="id" placeholder="Please Enter Food Item ID" required>
+                        </div>
+                        <div class="mb-3">
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <a id="BackAdminBtn" href="/admin" class="btn btn-primary">
+        Back Admin page
+        </a>
+    </div>
+{{/user}}
+</body>
+</html>

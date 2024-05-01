@@ -29,19 +29,22 @@ exports.login = function (req, res, next) {
         if (payload.role == "admin") {
           return res.render("admin", {
             title: "Admin dashboard",
-            user: "user",
+            user: "admin",
+            username : username
           });
         }
         if (payload.role == "Staff") {
-          return res.render("admin", {
-            title: "Admin dashboard",
-            user: "user",
+          return res.render("staff", {
+            title: "Staff dashboard",
+            user: "Staff",
+            username : username
           });
         }
         if (payload.role == "normalUser") {
           return res.render("Homepage", {
             title: "Homepage",
             user: "user",
+            username : username
           });
         }
         next();

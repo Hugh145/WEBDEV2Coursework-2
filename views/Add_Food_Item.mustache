@@ -4,9 +4,10 @@
 </head>
 <body>
 {{>navbar}}
+{{#user}}
 <div class="container mt-5">
     <h1 class="mb-4">Add Food Item</h1>
-    <form action="/Add_Food_Item" method="POST">
+    <form action="/Add_Food_Item" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="category" class="form-label">Type of Food</label>
             <select class="form-select" id="category" name="category" required>
@@ -33,8 +34,17 @@
             <label for="quantity" class="form-label">Total Number of Food Items</label>
             <input type="number" class="form-control" id="quantity" name="quantity" required>
         </div>
+        <div class="mb-3">
+            <label for="createBy" class="form-label">Enter in your username</label>
+            <input type="text" class="form-control" id="createBy" name="createBy" value="{{username}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="picture" class="form-label">Picture of Food Item</label>
+            <input type="file" class="form-control" id="picture" name="picture" accept="image/*">
+        </div>
         <button type="submit" class="btn btn-primary">Add Food Item</button>
     </form>
 </div>
-    </body>
+{{/user}}
+</body>
 </html>

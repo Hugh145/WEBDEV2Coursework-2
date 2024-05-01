@@ -100,6 +100,18 @@ class UserDAO {
     });
     });
   }
+
+  removeUserById(id) {
+    return new Promise((resolve, reject) => {
+        this.db.remove({ _id: id }, {}, (err, numRemoved) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(numRemoved);
+            }
+        });
+    });
+}
 }
 
 const dao = new UserDAO({ filename: "users.db", autoload: true });

@@ -3,28 +3,6 @@
     {{>header}}
 </head>
 <body class="container">
-<div class="text-right" style="margin-bottom: 1em;">
-{{^user}}
-  <a id="login" href="/register" class="btn btn-primary">
-    Register
-  </a>
-  <a id="login" href="/login" class="btn btn-primary">
-    Sign in
-  </a>
-{{/user}}
-{{#user}}
-    <a id="View posts" href="/loggedIn" class="btn btn-primary">
-   View posts
-  </a>
-<a href="/new" class="btn btn-primary">
-Write in the guestbook
-</a>
-
-  <a id="logout" href="/logout" class="btn btn-primary">
-    Sign out
-  </a>
-{{/user}}
-</div>
 <h1>{{title}}</h1>
 <div>
 <h2>Add users</h2>
@@ -40,7 +18,6 @@ Write in the guestbook
    <div class="form-group">
         <label for="role">Role</label>
         <select class="form-control" name="role" id="role" required>
-            <option value="normalUser">User</option>
             <option value="admin">Admin</option>
             <option value= "Staff">Staff</option>
         </select>

@@ -1,0 +1,38 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body class="container">
+<h1>{{title}}</h1>
+<form action="/createUserAccountAdmin" method="POST">
+    <div class="form-group">
+        {{user-name-error}}
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required>
+    </div>
+   <div class="form-group">
+        <label for="typeOfUser">type Of User profile</label>
+        <select class="form-control" name="typeOfUser" id="typeOfUser" required>
+            <option value="individual">individual profile</option>
+            <option value="Company">Company profile</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="name" class="form-control" id="name" name="name" placeholder="Enter name" minlength="3" required>
+    </div>
+    <div class="form-group">
+        <label for="EmailAddress" class="form-label">Email:</label>
+        <input type="EmailAddress" class="form-control" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address such as email@gmail.com" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password (6 characters minimum)</label>
+        <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter password" minlength="6" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-primary">
+        <a id="BackAdminBtn" href="/admin" class="btn btn-primary">Back Admin page</a>
+    </div>
+</form>
+</body>
+</html>

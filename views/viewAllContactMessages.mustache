@@ -1,0 +1,24 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>All Contact Messages</h1>
+        <div class="row mt-4">
+            {{#messages}}
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}} - {{email}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{subjectMatter}}</h6>
+                        <p class="card-text">{{message}}</p>
+                        <p class="card-text"><small class="text-muted">Published: {{published}}</small></p>
+                    </div>
+                </div>
+            </div>
+            {{/messages}}
+        </div>
+    </div>
+</body>
+</html>

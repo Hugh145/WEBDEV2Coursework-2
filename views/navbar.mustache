@@ -5,11 +5,9 @@
         </a>
         <div class="navbar-collapse justify-content-end">
             <ul class="navbar-nav">
-            {{#user}}
                 <li class="nav-item">
-                    <a class="nav-link active" >Welcome to the scottish pantry network website </a>
+                    <a class="nav-link active" >Welcome to the scottish pantry network website  </a>
                 </li>
-            {{/user}}
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
@@ -28,6 +26,9 @@
                 </li>
                 {{/user}}
                 {{#user}}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/ViewFoodItemUsername">View Your Food Items</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/Add_Food_Item">Add Food Items</a>
                 </li>
