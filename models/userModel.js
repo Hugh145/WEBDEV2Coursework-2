@@ -26,17 +26,10 @@ class UserDAO {
         password:"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy",
         role:"Staff"
         });
-    // this.db.insert({
-    //     user: 'Peter',
-    //     password:
-    //     '$2b$10$I82WRFuGghOMjtu3LLZW9OAMrmYOlMZjEEkh.vx.K2MM05iu5hY2C',
-    //     role:"normalUser"
-    // });
-    // this.db.insert({
-    //     user: 'Ann',
-    //     password: '$2b$10$bnEYkqZM.MhEF/LycycymOeVwkQONq8kuAUGx6G5tF9UtUcaYDs3S',
-    //     role:"admin"
-    // });
+
+      this.db.insert(
+        {user:"TestAccount1",typeOfUser:"individual",name:"Hugh Campbell",EmailAddress:"HANTHO300@caledonian.ac.uk",password:"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.",role:"normalUser"}
+      );
     return this;
   }
   create(username, password, role) {

@@ -1,5 +1,6 @@
 const userDao = require("../models/userModel.js");   
 const FoodItemDAO = require("../models/foodItemModel.js");  
+const PantryDAO = require("../models/PantriesModel.js");  
 const contactMessagesDAO = require("../models/contactMessages.js"); // to set database up in virtual memory use const db = new guestbookDAO();
 const nodemailer = require('nodemailer');
 
@@ -10,6 +11,11 @@ const transporter = nodemailer.createTransport({
         pass: 'sopv cpdx yvuh cgij'
     }
 });
+
+exports.show_enterInNewUsername = function (req, res) {
+  res.render("enterInNewUsername");
+};
+
 
 //user login
 exports.show_login = function (req, res) {
@@ -40,11 +46,19 @@ exports.about_page = function (req, res)
   });
 };
 
+//display_message messageUserFoodAdded
+exports.show_messageUserFoodAdded = function (req, res) {
+  res.render("messageUserFoodAdded", {
+    title: "messageUserFoodAdded",
+    user: "user"
+  });
+};
+
 //Add-Food-Item page 
 exports.show_new_Add_Food_Item = function (req, res) {
   res.render("Add_Food_Item", {
     title: "Add Food Item",
-    user: "user"
+    user: "user",
   });
 };
 
@@ -65,7 +79,7 @@ exports.addFoodItem = async function (req, res) {
       req.body.createBy,
       picture
     );
-    res.redirect("/Add_Food_Item");
+    res.redirect("/messageUserFoodAdded");
   } catch (error) {
     console.error("Error adding food item:", error);
     res.status(500).send("Error adding food item");
@@ -96,11 +110,11 @@ exports.postAllFoodItemswithUsername = function(req, res) {
     return;
   }
   FoodItemDAO.getFoodItemsByUser(req.body.name)
-    .then(foodItems => {
-      res.render('foodItems', {
+    .then(userFoodorders => {
+      res.render('viewFoodItemAsUser', {
         title: "View Food Items",
         user: "user",
-        foodItems: foodItems 
+        userFoodorders: userFoodorders 
       });
     })
     .catch(err => {
@@ -119,7 +133,7 @@ exports.show_ViewFoodItemUsername = function (req, res) {
 };
 
 
-//creating the link for the contact form
+//creating the link for the contact form messageSent
 exports.getContactform = function (req, res) {
   res.render("contact_form", {
     title: "contact form",
@@ -133,9 +147,17 @@ exports.postContactMessage = function (req, res) {
   }
 // Save the contact message to the database
   contactMessagesDAO.addContactMessage(req.body.email, req.body.name, req.body.subjectMatter, req.body.message );
-  res.redirect("/contact_form");
+  res.redirect("/messageSent");
 };
 
+//creating the link for messageSent
+exports.show_messageSent = function (req, res) {
+  res.render("messageSent", {
+    title: "messageSent",
+  });
+};
+
+//register
 exports.show_register_page = function (req, res) {
   res.render("user/register");
 };
@@ -153,7 +175,7 @@ exports.post_new_user = function (req, res) {
   }
   userDao.lookup(user, function (err, u) {
     if (u) {
-      res.send(401, "User exists:", user);
+      res.redirect("/enterInNewUsername");
       return;
     }
     userDao.createUser(user,typeOfUser, name,EmailAddress, password);
@@ -209,7 +231,7 @@ exports.show_admin = function (req, res) {
 exports.show_new_Add_Food_Item_Admin = function (req, res) {
   res.render("Add_Food_Item_Admin", {
     title: "Add Food Item",
-    user: "admin"
+    user: "admin",
   });
 };
 
@@ -221,7 +243,6 @@ exports.addFoodItemAdmin = async function (req, res) {
       return;
     }
     const picture = req.file ? req.file.path : null;
-
     await FoodItemDAO.addFoodItems(
       req.body.category,
       req.body.nameFood,
@@ -367,7 +388,8 @@ exports.post_sendEmail = function (req, res) {
     });
 
     console.log('Email sent:', info.messageId);
-    res.status(200).json({ message: 'Email sent successfully' });
+    res.render("sendEmail", { Message: "Email sent successfully" });
+    //res.status(200).json({ message: 'Email sent successfully' });
 } catch (error) {
     console.error('Error sending email:', error);
     res.status(500).json({ error: 'Failed to send email' });
@@ -404,6 +426,56 @@ exports.show_viewFoodItemStaff = function (req, res) {
       title: "View Food Items within usable date",
       user: "Staff",
       foodItems: foodItems 
+    });
+  })
+  .catch(err => {
+    console.error('Error fetching food items:', err);
+    res.status(500).send('Error fetching food items');
+  });
+};
+
+// Add food item to pantry
+exports.post_viewFoodItemStaff = async function (req, res) {
+  try {
+    const foodItemId = req.body.foodItemId;
+    const location = req.body.location; // Assuming location is provided in the request body
+
+    // Get the selected food item from FoodItemDAO
+    const foodItem = await FoodItemDAO.getFoodItemById(foodItemId);
+
+    if (!foodItem) {
+      res.status(404).send('Food item not found');
+      return;
+    }
+
+    // Add the selected food item to PantryItemDAO
+    await PantryDAO.pantryAddFoodItems(
+      foodItem.category,
+      foodItem.nameFood,
+      foodItem.expiryDate,
+      foodItem.quantity,
+      foodItem.createBy,
+      foodItem.picture,
+      location
+    );
+
+    // Remove the selected food item from FoodItemDAO
+    await FoodItemDAO.removeFoodItemById(foodItemId);
+
+    res.redirect('/messageUserFoodAdded'); // Redirect to success page
+  } catch (error) {
+    console.error("Error adding food item to pantry:", error);
+    res.status(500).send("Error adding food item to pantry");
+  }
+};
+
+exports.show_viewPantryFoodItemStaff = function (req, res) {
+  PantryDAO.getAllFoodItemsPantry()
+  .then(PantryItems => {
+    res.render('viewPantryFoodItemStaff', { 
+      title: "View Food Items within Pantry",
+      user: "Staff",
+      PantryItems: PantryItems 
     });
   })
   .catch(err => {

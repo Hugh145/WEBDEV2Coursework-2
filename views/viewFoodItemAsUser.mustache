@@ -1,0 +1,29 @@
+<html>
+<head>
+    {{>header}}
+</head>
+<body>
+{{>navbar}}
+    <div class="container mt-5">
+        <h1>All Your Place Orders of Food Items</h1>
+        <div class="row mt-4">
+            {{#userFoodorders}}
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <img src="{{picture}}" alt="{{nameFood}}" class="img-fluid">
+                        <h5 class="card-title">The name of food: {{nameFood}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> The type of food: {{category}}</h6>
+                        <p class="card-text">Order ID: {{_id}}</p>
+                        <p class="card-text">Username: {{createBy}}</p>
+                        <p class="card-text">The total number of food: {{quantity}}</p>
+                        <p class="card-text"><small class="text-muted">Expiry Date: {{expiryDate}}</small></p>
+                        <p class="card-text"><small class="text-muted">Published: {{published}}</small></p>
+                    </div>
+                </div>
+            </div>
+            {{/userFoodorders}}
+        </div>
+    </div>
+</body>
+</html>

@@ -13,7 +13,7 @@ exports.login = function (req, res, next) {
     }
     if (!user) {
       console.log("user ", username, " not found");
-      return res.render("user/register");
+      return res.render("user/login", { errorMessage: "Incorrect username" });
     }
     //compare provided password with stored password
     bcrypt.compare(password, user.password, function (err, result) {
@@ -94,6 +94,6 @@ exports.verifyAdmin = function (req, res, next) {
     next();
   } catch (e) {
     //if an error occured return request unauthorized error
-    res.status(401).send();
+    res.render("user/login", { errorMessagePassword: "Incorrect password" });
   }
 };

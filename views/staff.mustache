@@ -5,7 +5,7 @@
 <body>
 <main>
 <h1>{{title}}</h1>
-    <div class="container text-center"> <!-- Center aligning the buttons -->
+    <div class="container text-center"> <!-- Center aligning the buttons viewPantryFoodItemStaff -->
         {{#user}}
         <h1>FOOD ITEMS</h1>
         <br>
@@ -15,7 +15,17 @@
                         View all food items within date
                     </a>
                 </div>
+                <div class="col">
+                    <a id="View pantries items" href="/viewPantryFoodItemStaff" class="btn btn-primary">
+                        View all food items within pantries
+                    </a>
+                </div>
             </div>
         {{/user}}
     </div>
-
+    <a id="logout" href="/logout" class="btn btn-primary">
+        Sign out
+    </a>
+</main>
+<body>
+<html>

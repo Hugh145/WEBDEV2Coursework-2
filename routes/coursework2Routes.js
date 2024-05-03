@@ -13,24 +13,26 @@ router.get("/", controller.landing_page);
 //this is for the contact form 
 router.get('/contact_form', controller.getContactform);
 router.post('/contact_form',controller.postContactMessage);
+router.get('/messageSent',controller.show_messageSent);
 
 
 //about page 
 router.get( '/about', controller.about_page);
 
 
-//add new food item
+//add new food item and viewing food items 
 router.get('/Add_Food_Item',auth.verify,controller.show_new_Add_Food_Item);
 router.post("/Add_Food_Item",upload.single("picture"), auth.verify, controller.addFoodItem);
 router.get('/ViewFoodItemUsername', auth.verify, controller.show_ViewFoodItemUsername);
 router.post("/ViewFoodItemUsername", auth.verify, controller.postAllFoodItemswithUsername);
+router.get('/messageUserFoodAdded',auth.verify,controller.show_messageUserFoodAdded);
 //displaying all the food items 
 router.get('/foodItems', auth.verify, controller.showAllFoodItems);
-
 
 //register page
 router.get('/register', controller.show_register_page);
 router.post('/register', controller.post_new_user);
+router.get('/enterInNewUsername',controller.show_enterInNewUsername);
 
 //login in and out 
 router.get("/loggedIn",auth.verify, controller.loggedIn_landing);
@@ -75,13 +77,23 @@ router.post('/sendEmail',auth.verifyAdmin,controller.post_sendEmail);
 router.get("/staff",auth.verifyStaff, controller.show_staff);
 //viewing the food items 
 router.get('/viewFoodItemStaff', auth.verifyStaff, controller.show_viewFoodItemStaff);
+router.post('/viewFoodItemStaff', auth.verifyStaff, controller.post_viewFoodItemStaff);
 
+//viewing all the parties 
+router.get('/viewPantryFoodItemStaff',auth.verifyStaff, controller.show_viewPantryFoodItemStaff);
+
+//error displaying
 router.use(function(req, res) {
         res.status(404);
         res.type('text/plain');
         res.send('404 Not found.');
     });
 
+router.use(function(req, res) {
+        res.status(401);
+        res.type('text/plain');
+        res.send('please enter in new username.');
+    });
 
 router.use(function(err, req, res, next) {
         res.status(500);

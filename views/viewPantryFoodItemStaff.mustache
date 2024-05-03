@@ -4,7 +4,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="mb-4">All Food Items within Expiry Date</h1>
+    <h1 class="mb-4">All Pantry Items</h1>
     <table class="table">
       <thead>
         <tr>
@@ -15,12 +15,12 @@
           <th scope="col">Quantity</th>
           <th scope="col">published</th>
           <th scope="col">createBy</th>
+          <th scope="col">location</th> 
           <th scope="col">Picture</th>
-          <th scope="col">Select</th> 
         </tr>
       </thead>
       <tbody>
-        {{#foodItems}}
+        {{#PantryItems}}
         <tr>
           <td>{{_id}}</td>
           <td>{{category}}</td>
@@ -29,16 +29,10 @@
           <td>{{quantity}}</td>
           <td>{{published}}</td>
           <td>{{createBy}}</td>
+          <td>{{pantryLocation}}</td>
           <td><img src="{{picture}}" alt="{{nameFood}}" class="img-fluid"></td>
-          <td>
-            <form action="/viewFoodItemStaff" method="POST">
-              <input type="hidden" name="foodItemId" value="{{_id}}">
-              <input type="text" name="location" placeholder="Enter location" required>
-              <button type="submit" class="btn btn-primary">Select</button>
-            </form>
-          </td>
         </tr>
-        {{/foodItems}}
+        {{/PantryItems}}
       </tbody>
     </table>
    {{#user}}

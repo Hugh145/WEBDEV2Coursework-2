@@ -7,6 +7,11 @@
 <div class="container">
         <h2 class="mt-5 mb-4">Send a email </h2>
         <form action="/sendEmail" method="post" >
+        {{#Message}}
+        <div class="alert alert-danger" role="alert">
+            {{Message}}
+        </div>
+        {{/Message}}
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" required>
@@ -21,6 +26,9 @@
             </div>
             <button type="submit" value=contact_form class="btn btn-primary">Send Email</button>
         </form>
+        <a id="BackAdminBtn" href="/admin" class="btn btn-primary">
+   Back Admin page
+  </a>
     </div>
     </main>
 </body>

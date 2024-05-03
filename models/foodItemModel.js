@@ -56,6 +56,18 @@ class foodItemModel {
     });
   }
 
+  getFoodItemById(foodItemId) {
+    return new Promise((resolve, reject) => {
+        this.db.findOne({ _id: foodItemId }, (err, foodItem) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(foodItem);
+            }
+        });
+    });
+}
+
   getFoodItemsByUser(name) {
     return new Promise((resolve, reject) => {
         this.db.find({ createBy: name }, function (err, foodItems) {
@@ -97,7 +109,6 @@ removeFoodItemById(id) {
 // Method to update a food item by its ID
 updateFoodItemById(id, category, nameFood, expiryDate, quantity, createBy, picture) {
   return new Promise((resolve, reject) => {
-    // Find the document with the given ID
     this.db.findOne({ _id: id }, (err, foodItem) => {
       if (err) {
         reject(err);

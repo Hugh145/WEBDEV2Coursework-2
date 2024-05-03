@@ -5,6 +5,7 @@
     {{>navbar}}
     <main>
     <br>
+  <section class="container"
    <div class="container-fluid">
     <div class="row">
       <div class="col">
@@ -35,10 +36,11 @@
     });
   </script>
   <br>
+  </section>
   <div class="container">
   <article class="NewsBox">
                 <div class="Big_Text_Header_NewsBox">
-                     <h4 class="sub_header"> Help the scottish pantry network by making a Donatation</h4> </div>
+                     <h4 class="sub_header"> Help the scottish pantry network by making a Donation</h4> </div>
                 <img src="/img/Donation_Box.png" class="NewsImage">
                 <div class="brief">
                     <h4 class="sub_header">brief: How little alway helps</h4>
@@ -51,7 +53,7 @@
                 </div>
 
                 <div class="About_Author">
-                    <h4 class="sub_header">Click Here to make Donatation - must be login</h4>
+                    <h4 class="sub_header">Click Here to make Donation - must be login</h4>
                     
                     <div class="text-right" style="margin-bottom: 1em;">
                     {{^user}}
@@ -64,8 +66,8 @@
                    {{/user}}
                    {{#user}}
                    <div class="text-right">
-                   <a href="/new" class="btn btn-primary">
-                   Make a Donatation
+                   <a href="/Add_Food_Item" class="btn btn-primary">
+                   Make a Donation
                    </a>
                    </div>
                    {{/user}}
