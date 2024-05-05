@@ -18,10 +18,14 @@ and the password is StaffHugh
 
 for alreadly register the username is : TestAccount1
 and password is TestAccount1
+
+
 un-register user can do 
 
 send contact message to the database 
+
 sign in 
+
 register
 
 login in user can do 
