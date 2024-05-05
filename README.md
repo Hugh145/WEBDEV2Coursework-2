@@ -1,6 +1,22 @@
 # WEBDEV2Coursework-2
 Hugh Campbell Coursework 2 for web development 2 for the Scottish pantry network website
 
+before running at the terminal delete the databases 
+at the terminal run node index 
+
+in the chome brower run localhost:3000
+
+look at the video on how the website works at: 
+
+
+for login in as admin it is for the username : AdminHugh
+and the password is AdminHugh
+
+for the login in as staff it username is : StaffHugh 
+and the password is StaffHugh
+
+for alreadly register the username is : TestAccount1
+and password is TestAccount1
 un-register user can do 
 
 send contact message to the database 

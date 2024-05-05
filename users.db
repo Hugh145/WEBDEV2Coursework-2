@@ -1,11 +1,20 @@
-{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"0vlxjmXlEe00Lh8q"}
-{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"1PpXrT8R7xy8dZCL"}
-{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"6AEaHgf6cx5GCaEY"}
-{"user":"TestAccount2","typeOfUser":"Company","name":"TestAccount2","EmailAddress":"TestAccount2@TestAccount2.com","password":"$2b$10$8OI7UtyWGTGGtBpI8e3qf.OWPFAMHWOwJLJqQhwfBb/ubvyq/nsd.","role":"normalUser","_id":"BFu4uURWuWXnJaPL"}
-{"user":"TestAccount2s","password":"$2b$10$e3b2CfnkSIFbTMipx21cE.B5i6AqLXWqe9493D.3UgNR36UxdmSBC","role":"Staff","_id":"DMDrF4a5JM6Udefk"}
-{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"JedYTGOyAAkEGwcJ"}
-{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"bCppJRykT464gcCQ"}
-{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"zcSjH5SHarFYCSWc"}
-{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"6Go2IR8Yc40LB50M"}
-{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"XHf6YS7tlMu3gP8Y"}
-{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"PynsSSDg7NGlcK6R"}
+{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"1Ov4qcYFhsYPrgGt"}
+{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"5ITYhR9mbFH8NOMG"}
+{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"B6OZ8PPJMjJC0eQE"}
+{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"BCqjVyIx0ZqADIgE"}
+{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"DaMhYDjKKkSPlARG"}
+{"user":"TestAccount2","typeOfUser":"Company","name":"TestAccount2","EmailAddress":"TestAccount2@TestAccount2.com","password":"$2b$10$TJ36XWZbZCMy4PYQXd2bcuXyBl9hHBgt4czJ.5yQ4.j.5EiEn3dUO","role":"normalUser","_id":"HzwnL5YG9P2004UR"}
+{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"M8VZUiJtvmD4THJZ"}
+{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"S3iaW7iWDUkLXTdc"}
+{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"VtVWcB967YIsCmCl"}
+{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"beszP2Z4rkGkGGah"}
+{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"giqam9NxYHktjeEi"}
+{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"h9Q3KHNwrXXIRftS"}
+{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"l4CkkRgnxUbe548M"}
+{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"qHFDqKcjoU8UyC6r"}
+{"user":"testAccount3","typeOfUser":"individual","name":"testAccount3","EmailAddress":"playlists0123@gmail.com","password":"$2b$10$fnHNGqSPP3GylZ.dGtJ0EOSCq3QTy0DwpQkOTF/Q2bLwAOE9WWe06","role":"normalUser","_id":"udTJVDIYMGmWHGD8"}
+{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"vV3w9VX1CONIp00k"}
+{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"zv7KcNJgDpKoWXJm"}
+{"user":"AdminHugh","password":"$2b$10$04nO8oYrcE2DkELBOTRdr.z6Et0fp/zVi3KZ03OE6qt5ndgDhG4Ve","role":"admin","_id":"HbSXZeftErNs0HcF"}
+{"user":"StaffHugh","password":"$2b$10$2wcBU.isc3iyd/awjUXBye/KaHP8e/bZMqSLtL6C/D3m2dXRxR2Fy","role":"Staff","_id":"dpwhmjdNn0QxJpOy"}
+{"user":"TestAccount1","typeOfUser":"individual","name":"Hugh Campbell","EmailAddress":"HANTHO300@caledonian.ac.uk","password":"$2b$10$pRMbaC2eDtDH9X.EvPTfUec/PrX7y4qvh4zZ./3QRfiDm1QptsxA.","role":"normalUser","_id":"1PEaXHcyXcM83uAX"}

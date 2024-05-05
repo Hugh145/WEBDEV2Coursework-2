@@ -419,6 +419,14 @@ exports.show_staff = function (req, res) {
   });
 };
 
+//show that pantry has been added 
+exports.show_messageAddFoodItemToPantry = function (req, res) {
+  res.render("messageAddFoodItemToPantry", {
+    title: "message added",
+    user:"Staff"
+  });
+};
+
 exports.show_viewFoodItemStaff = function (req, res) {
   FoodItemDAO.getAvailableItemsOfExpiryDate()
   .then(foodItems => {
@@ -462,7 +470,7 @@ exports.post_viewFoodItemStaff = async function (req, res) {
     // Remove the selected food item from FoodItemDAO
     await FoodItemDAO.removeFoodItemById(foodItemId);
 
-    res.redirect('/messageUserFoodAdded'); // Redirect to success page
+    res.redirect('/messageAddFoodItemToPantry'); // Redirect to success page
   } catch (error) {
     console.error("Error adding food item to pantry:", error);
     res.status(500).send("Error adding food item to pantry");

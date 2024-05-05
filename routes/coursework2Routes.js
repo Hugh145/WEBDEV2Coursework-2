@@ -75,6 +75,10 @@ router.post('/sendEmail',auth.verifyAdmin,controller.post_sendEmail);
 
 //staff pages 
 router.get("/staff",auth.verifyStaff, controller.show_staff);
+
+//message the selected item has been added to pantry
+
+router.get("/messageAddFoodItemToPantry",auth.verifyStaff, controller.show_messageAddFoodItemToPantry);
 //viewing the food items 
 router.get('/viewFoodItemStaff', auth.verifyStaff, controller.show_viewFoodItemStaff);
 router.post('/viewFoodItemStaff', auth.verifyStaff, controller.post_viewFoodItemStaff);
