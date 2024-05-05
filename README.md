@@ -6,7 +6,8 @@ at the terminal run node index
 
 in the chome brower run localhost:3000
 
-look at the video on how the website works at: 
+look at the video on how the website works at:  https://caledonianac-my.sharepoint.com/:v:/g/personal/hantho300_caledonian_ac_uk/ETqO54uQC2BNt4NX1NDo9oMBGbQBbU4n6mM59rAg2zw9fA?e=4kmDib
+ 
 
 
 for login in as admin it is for the username : AdminHugh
