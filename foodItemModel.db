@@ -1,10 +1,7 @@
-{"category":"Dairy","nameFood":"eggs","expiryDate":"2024-05-10","quantity":"2","published":"2024-05-05","createBy":"TestAccount1","picture":null,"_id":"EwkOKcX2r1fsKZCl"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"GNdnhwkqadV5Bo5L"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"I37hKCUa2K9FUQoH"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"Xb5tJwTJIUxTk3tA"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"joFaab31QR7bjdzs"}
-{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"sxHsoRVFmoaPfjMW"}
 {"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"lhneUO4Ywrcqr5SK"}
-{"category":"Protein Food","nameFood":"fish sea food","expiryDate":"2024-05-12","quantity":"5","published":"2024-05-05","createBy":"TestAccount1","picture":"uploads\\780897b0a2b66fab7ff551cf8db77ba5","_id":"JMhwMkywCQ0NXIHB"}
-{"$$deleted":true,"_id":"JMhwMkywCQ0NXIHB"}
-{"$$deleted":true,"_id":"EwkOKcX2r1fsKZCl"}
+{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"sxHsoRVFmoaPfjMW"}
+{"category":"Fruit","nameFood":"Apple","quantity":5,"expiryDate":"2024-02-27","published":"2024-02-16","picture":"https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/fresh-apples.jpg?quality=82&strip=1","createBy":"king01","_id":"2Z38M31iN9VFZnPi"}
